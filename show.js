@@ -146,10 +146,10 @@ function listHtmlText(cardElement) {
 
                 let value = element[key];
 
-                if (key === 'Название') {
+                if (key == 'Название') {
                     title = value;
 
-                } else if (key === 'Урон') {
+                } else if (key == 'Урон') {
                     damage = value;
 
                 } else {
