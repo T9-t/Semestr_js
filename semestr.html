@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Добро пожаловать</title>
+</head>
+<body>
+    <section id="salutation_page">
+        <div class="salutation-page">
+            <H2>Добро пожаловать</H2>
+            <input id="user_name" placeholder="Введите свое имя">
+            <br>
+            <button class="slider-btn" onclick="nextPage()">Далее</button>
+        </div>
+    </section>
+
+    <section id="main_page" style="display: none;">
+        
+        <div id="load_page" class="center-position-screen">
+            <h2>Дождитесь загрузки данных</h2>
+            <img src="https://tenor.com/view/pokemon-gif-8194391615966651454.gif">
+        </div>
+
+        <section id="card_pokedex" style="display: none;">
+            <div class="card-section">
+
+                <h3 id="salutation_text" class="center-position"></h3>
+                
+                <div id="card_info" style="display: none;">
+                    <div class="center-position">
+                
+                        <h3>Информация о карточке</h3>
+                        <div class="card-container">
+
+                            <div class="card-slider-container">
+                                <button id="past_info" class="slider-btn"><</button>
+                                <img id="card_img" class="card-item" referrerpolicy="no-referrer">
+                                <button id="next_info" class="slider-btn">></button>
+                            </div>
+
+                            <table id="info_table" class="card-table"></table>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Фильтрация карточек</h3>
+                <table class="filter-table"> 
+                    <tr>
+                        <td>
+                            <span>Всего карточек в наборе: <b id="stat_total">0</b></span>
+                            <br>
+                            <span>Карточек покемонов: <b id="stat_pokemon">0</b></span>
+                            <br>
+                            <span>Карточек тренеров: <b id="stat_trainer">0</b></span>
+                            <br>
+                            <span>Карточек энергии: <b id="stat_energy">0</b></span>
+                            <br><br>
+
+                            <label for="card_pack">Пак карточек</label>
+                            <select id="card_pack">
+                                <option>swsh3-1</option>
+                            </select>
+                        </td>
+                        <td>
+                            <label for="card_sort">Сортировка по индексу</label>
+                            <select id="card_sort">
+                                <option value="asc">По возрастанию</option>
+                                <option value="not_asc">По убыванию</option>
+                            </select>
+                            <br><br>
+                        
+                            <button onclick="sortCards()">Сортировка</button>
+                        </td>
+                        <td>
+                            <label for="card_type">Фильтрация по типу карточки</label>
+                            <select id="card_type">
+                                <option value="all">Всех типов</option>
+                                <option value="Pokemon">Карточки покемонов</option>
+                                <option value="Trainer">Карточки тренеров</option>
+                                <option value="Energy">Карточки енергии</option>
+                            </select> 
+                            <br>
+
+                            <label for="card_rarity">Фильтрация по редкости карточки</label>
+                            <select id="card_rarity">
+                                <option value="all">Всех редкостей</option>
+                                <option value="Holo Rare VMAX">Holo Rare VMAX (Ультраредкие голографические)</option>
+                                <option value="Holo Rare V">Holo Rare V (Редкие голографические)</option>
+                                <option value="Holo Rare">Holo Rare (Обычные голографические)</option>
+                                <option value="Secret Rare">Secret Rare (Секретные редкие)</option>
+                                <option value="Ultra Rare">Ultra Rare (Ультра редкие)</option>
+                                <option value="Rare">Rare (Редкие)</option>
+                                <option value="Uncommon">Uncommon (Необычные)</option>
+                                <option value="Common">Common (Обычные)</option>
+                            </select>
+                            <br><br>
+
+                            <button onclick="filterCards()">Фильтрация</button>
+                        </td>
+                    </tr>
+                </table>
+
+                <h3>Собрание карточек</h3>
+                <div class="card-slider-container">
+                    <button id="prev_page" class="slider-btn" onclick="changePage(-1)"><</button>
+                    <span id="page_num">1</span>
+                    <button id="next_page" class="slider-btn" onclick="changePage(1)">></button>
+                </div>
+
+                <div id="cards_grid" class="cards-grid"></div>
+            </div>
+        </section>
+    </section>
+
+    <script src="cardClass.js"></script>
+    <script src="data.js"></script>
+    <script src="sort_data.js"></script>
+    <script src="show.js"></script>
+</body>
+</html>
