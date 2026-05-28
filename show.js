@@ -48,8 +48,12 @@ function updateCardList(list) {
 
     let maxPage = Math.ceil(list.length / cardsPerPage) || 1;
     
-    if (currentPage > maxPage) currentPage = maxPage;
-    if (currentPage < 1) currentPage = 1;
+    if (currentPage > maxPage) {
+        currentPage = maxPage;
+    }
+    if (currentPage < 1) {
+        currentPage = 1;
+    }
 
     document.getElementById("page_num").textContent = `${currentPage} из ${maxPage}`;
     document.getElementById("prev_page").style.visibility = (currentPage == 1) ? 'hidden' : 'visible';
