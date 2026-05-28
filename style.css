@@ -105,13 +105,6 @@ button, select, input, option, table {
     background: rgba(255, 255, 255, 0.8);
     transform: scale(1.05);
 }
-.slider-btn:disabled, button:disabled {
-    background: rgba(0, 0, 0, 0.05);
-    border-color: transparent;
-    color: rgba(0, 0, 0, 0.2);
-    cursor: not-allowed;
-    transform: none;
-}
 
 .card-table {
     width: 100%;
