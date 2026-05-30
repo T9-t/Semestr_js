@@ -20,9 +20,7 @@ async function updateCards() {
 }
 
 function proxyFetch(url) {
-
-    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-    return fetch(proxyUrl + url);
+    return fetch(url);
 }
 
 function translateText(text) {
